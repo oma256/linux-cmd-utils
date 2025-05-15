@@ -1,5 +1,4 @@
 # linux-utils
 
-Набор скриптов для установки и удаления различных сервисов на Linux-системах.  
-Проект ориентирован на автоматизацию задач DevOps и может быть расширен для 
-поддержки других дистрибутивов и утилит.
+A set of scripts for installing and removing various services on Linux systems.
+The project is focused on automating DevOps tasks and can be expanded to support other distributions and utilities.
