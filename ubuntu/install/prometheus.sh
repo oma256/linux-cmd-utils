@@ -59,9 +59,7 @@ Group=$GROUP
 Type=simple
 ExecStart=/usr/local/bin/prometheus \\
   --config.file=$CONFIG_DIR/prometheus.yml \\
-  --storage.tsdb.path=$DATA_DIR \\
-  --web.console.templates=$CONFIG_DIR/consoles \\
-  --web.console.libraries=$CONFIG_DIR/console_libraries
+  --storage.tsdb.path=$DATA_DIR
 
 [Install]
 WantedBy=multi-user.target
