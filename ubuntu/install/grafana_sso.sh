@@ -24,8 +24,13 @@ sudo apt-get update
 
 # === Download and install .deb ===
 echo "📦 Installing Grafana ${GRAFANA_VERSION}..."
-wget -q https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_amd64.deb
-sudo dpkg -i grafana_${GRAFANA_VERSION}_amd64.deb
+wget -q -O /tmp/grafana.deb https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_amd64.deb
+
+echo "📦 Install Grafana..."
+sudo dpkg -i /tmp/grafana.deb
+
+# === Remove .deb file ===
+rm -f /tmp/grafana.deb
 
 # === Creating a Prometheus Data Source ===
 echo "⚙️ Creating a Prometheus Data Source..."
