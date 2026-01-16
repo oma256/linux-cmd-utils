@@ -20,7 +20,11 @@ sudo rm -rf /var/log/grafana
 sudo rm -rf /usr/share/grafana
 
 echo "🔐 Removing Environment Variables..."
-sudo sed -i '/GF_SECURITY_ADMIN_USER/d' /etc/default/grafana-server || true
-sudo sed -i '/GF_SECURITY_ADMIN_PASSWORD/d' /etc/default/grafana-server || true
+if [ -f /etc/default/grafana-server ]; then
+    sudo sed -i '/GF_SECURITY_ADMIN_USER/d' /etc/default/grafana-server || true
+    sudo sed -i '/GF_SECURITY_ADMIN_PASSWORD/d' /etc/default/grafana-server || true
+fi
 
-echo "📜 У
+sudo rm -f /etc/default/grafana-server
+
+echo "✅ Grafana removed completely."
